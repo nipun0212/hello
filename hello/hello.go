@@ -1,11 +1,17 @@
 package main
 
-import (
-	"fmt"
+import "fmt"
 
-	"github.com/nipun0212/stringutil"
-)
+type IPAddr [4]byte
+
+// TODO: Add a "String() string" method to IPAddr.
+
+func (i IPAddr) String() string {
+	return fmt.Sprintf("%v", i.String())
+}
 
 func main() {
-	fmt.Printf(stringutil.Reverse("!oG ,olleH"))
+	s := IPAddr{2, 3, 5, 7}
+	//i := IPAddr()
+	fmt.Println(s)
 }
