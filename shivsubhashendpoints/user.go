@@ -3,7 +3,7 @@ package shivsubhashendpoints
 import (
 	//"errors"
 	"github.com/GoogleCloudPlatform/go-endpoints/endpoints"
-	"github.com/nipun0212/shivsubhashmodel"
+	//"github.com/nipun0212/shivsubhashmodel"
 	//"shivsubhash/shivsubhashmodel"
 
 	//"golang.org/x/net/context"
@@ -27,13 +27,13 @@ type ShivSubhashSchool1API struct {
 // 	CYZ           string `json:"cyz"`
 // }
 
-func (ss *ShivSubhashSchool1API) SaveOrganization(r *http.Request, req *shivsubhashmodel.OrgSaveReq) error {
+func (ss *ShivSubhashSchool1API) SaveOrganization(r *http.Request, req *OrgSaveReq) error {
 	c := endpoints.NewContext(r)
 	_, err := getCurrentUser(c)
 	if err != nil {
 		return err
 	}
-	o := shivsubhashmodel.Organization{}
+	o := Organization{}
 	o.Update(c, req)
 	err = o.Put(c)
 	return err

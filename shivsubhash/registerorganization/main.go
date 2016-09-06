@@ -22,6 +22,9 @@ package registerorganization
 import (
 	"github.com/GoogleCloudPlatform/go-endpoints/endpoints"
 	"github.com/nipun0212/shivsubhashendpoints"
+	//"golang.org/x/net/context"
+	//"log"
+	//"net/http"
 )
 
 func init() {

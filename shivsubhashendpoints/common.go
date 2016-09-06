@@ -52,6 +52,14 @@ func RegisterService() (*endpoints.RPCService, error) {
 	info.Path, info.HTTPMethod, info.Name = "getALlOrganization", "POST", "getAllorganization"
 	info.Scopes, info.ClientIds, info.Audiences = scopes, clientIds, audiences
 
+	info = rpcService.MethodByName("AddEmployee").Info()
+	info.Path, info.HTTPMethod, info.Name = "addEmployee", "POST", "add.Employee"
+	info.Scopes, info.ClientIds, info.Audiences = scopes, clientIds, audiences
+
+	info = rpcService.MethodByName("CreateRoles").Info()
+	info.Path, info.HTTPMethod, info.Name = "createRoles", "POST", "createRoles"
+	info.Scopes, info.ClientIds, info.Audiences = scopes, clientIds, audiences
+
 	api1 := &ShivSubhashSchool1API{}
 	rpcService, err = endpoints.RegisterService(api1,
 		"registerorganization1", "v2", "Rgisters the Organization", true)
@@ -64,5 +72,6 @@ func RegisterService() (*endpoints.RPCService, error) {
 	info = rpcService.MethodByName("SaveOrganization").Info()
 	info.Path, info.HTTPMethod, info.Name = "saveOrganization1", "POST", "save.organization"
 	info.Scopes, info.ClientIds, info.Audiences = scopes, clientIds, audiences
+
 	return rpcService, nil
 }
